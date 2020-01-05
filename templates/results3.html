@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>各国GDP</title>
+    <link rel="icon" href="../static/img/icon.jfif" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<style>
+
+    header{
+        border-bottom: 10px solid #f5f5f5;
+    }
+</style>
+<body style="background-image:url(https://p2.ssl.qhimgs1.com/sdr/400__/t011104131456036408.jpg); background-position: center center; background-size:cover;">
+<header >
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"><a href="/">首页</a></li>
+</ul>
+</header>
+
+<form method="POST" action="/hurun1">
+    <label>
+        <select class='col-md-3 col-lg-offset-3' name="the_region_selected1"style="background:darkseagreen">
+            {% for item in the_select_region1 %}
+                <option value="{{ item }}">{{ item }}</option>
+            {% endfor %}
+        </select>
+    </label>
+    <p><input class='btn btn-success col-md-1 col-lg-offset-3' value='Do it!' type='SUBMIT'></p>
+</form>
+{{ the_plot_all|safe }}
+{{ the_res|safe }}
+
+
+</body>
+</html>
